@@ -2895,6 +2895,498 @@ button, a, label, select {
   .lh-brand-logo { width: 34px; height: 34px; }
   .lh-brand-name { font-size: 18px; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT MODE — PREMIUM SYSTEM (FINAL CASCADE LAYER)
+   Placed last so it beats all prior !important declarations.
+   JS init (below) adds body.light-theme from system preference
+   so these rules fire for both system light AND manual toggle.
+═══════════════════════════════════════════════════════════ */
+
+/* ── Token layer ── re-declared after PREMIUM PRODUCT PASS :root */
+body.light-theme {
+  color-scheme: light;
+  --red:          #C52222;
+  --red-dark:     #9E1A1A;
+  --red-light:    #E03333;
+  --black:        #F6F3EF;
+  --dark:         #EBE7E2;
+  --card:         rgba(255,255,255,0.86);
+  --card2:        rgba(255,255,255,0.97);
+  --border:       rgba(18,18,22,0.09);
+  --text:         #18181B;
+  --muted:        #5C6069;
+  --muted2:       #8D919B;
+  --white:        #101012;
+  --premium-line: rgba(18,18,22,0.09);
+  --glass:        rgba(255,255,255,0.76);
+  --glass-strong: rgba(255,255,255,0.93);
+  --surface-1:    rgba(255,255,255,0.74);
+  --surface-2:    rgba(255,255,255,0.90);
+  --surface-3:    rgba(255,255,255,0.98);
+  --field-bg:     rgba(255,255,255,0.90);
+  --nav-bg:       rgba(247,244,240,0.94);
+  --shadow-soft:  0 2px 10px rgba(18,18,22,0.06), 0 1px 3px rgba(18,18,22,0.04);
+  --shadow-card:  0 6px 24px rgba(18,18,22,0.08), 0 2px 6px rgba(18,18,22,0.04);
+  --shadow-shell: 0 24px 60px rgba(38,30,26,0.16);
+  --focus-ring:   rgba(197,34,34,0.14);
+  --app-bg:
+    radial-gradient(circle at 14% 0%, rgba(197,34,34,0.07), transparent 32%),
+    linear-gradient(160deg, #F9F5F0 0%, #EDE8E2 100%);
+  --screen-bg:
+    radial-gradient(circle at 84% -10%, rgba(197,34,34,0.05), transparent 28%),
+    linear-gradient(180deg, #FAF8F4 0%, #F2EDE8 100%);
+}
+
+/* ── Global surfaces ── */
+body.light-theme { background: var(--app-bg); }
+body.light-theme .phone { background: var(--black); }
+body.light-theme .view { background: var(--screen-bg) !important; }
+body.light-theme .notch { background: #F6F3EF; }
+body.light-theme .screen { background: var(--black); }
+
+/* ── Status bar ── */
+body.light-theme .status-bar { color: var(--text); }
+body.light-theme .status-right svg { color: var(--muted); }
+
+/* ── Login view ── */
+body.light-theme #view-login { background: #FAF8F4 !important; }
+body.light-theme .login-hero {
+  background:
+    radial-gradient(ellipse at 76% 18%, rgba(197,34,34,0.17) 0%, transparent 46%),
+    radial-gradient(ellipse at 16% 86%, rgba(158,26,26,0.08) 0%, transparent 42%),
+    linear-gradient(158deg, #FFFFFF 0%, #F7F1EF 56%, #FBF3F1 100%) !important;
+  border-right: none;
+}
+body.light-theme .login-hero-title { color: #18181B !important; }
+body.light-theme .login-hero-title span { color: var(--red) !important; }
+body.light-theme .lh-brand-name { color: #18181B !important; }
+body.light-theme .lh-brand-name em { color: var(--red) !important; }
+body.light-theme .lh-tagline { color: rgba(24,24,27,0.54) !important; }
+body.light-theme .lh-feat { color: rgba(24,24,27,0.50) !important; }
+body.light-theme .lh-feat::before { background: rgba(197,34,34,0.86); }
+@media (min-width: 768px) {
+  body.light-theme #view-login .login-hero {
+    border-right: 1px solid rgba(18,18,22,0.08) !important;
+  }
+}
+
+/* ── Hero card (premium-hero) ── */
+body.light-theme .hero-card.premium-hero {
+  background:
+    radial-gradient(ellipse at 88% 55%, rgba(197,34,34,0.20), transparent 40%),
+    radial-gradient(circle at 10% 8%, rgba(0,0,0,0.03), transparent 22%),
+    linear-gradient(148deg, #FFFFFF 0%, #F5EEEB 56%, #F9EBE8 100%) !important;
+  border: 1px solid rgba(18,18,22,0.08) !important;
+  box-shadow: 0 10px 36px rgba(38,28,26,0.11), inset 0 1px 0 rgba(255,255,255,0.72) !important;
+}
+body.light-theme .premium-hero .hero-label  { color: rgba(24,24,27,0.58) !important; opacity: 1 !important; }
+body.light-theme .premium-hero .hero-title  { color: #18181B !important; }
+body.light-theme .premium-hero .hero-subtitle { color: rgba(24,24,27,0.58) !important; opacity: 1 !important; }
+body.light-theme .hero-btn { background: #151518 !important; color: #FFFFFF !important; }
+body.light-theme .hero-car-wrap { opacity: 0.52 !important; }
+body.light-theme .hero-car-wrap::after {
+  background: radial-gradient(ellipse at 50% 100%, rgba(197,34,34,0.22) 0%, transparent 70%);
+}
+
+/* ── Desktop sidebar ── */
+body.light-theme .desk-sidebar {
+  background: rgba(247,244,240,0.98);
+  border-right: 1px solid rgba(18,18,22,0.08);
+}
+body.light-theme .ds-brand { border-bottom-color: rgba(18,18,22,0.07); }
+body.light-theme .ds-brand-name { color: #18181B; }
+body.light-theme .ds-item { color: #5C6069; }
+body.light-theme .ds-item:hover { background: rgba(18,18,22,0.05); color: #18181B; }
+body.light-theme .ds-item.active { background: rgba(197,34,34,0.09); color: var(--red); }
+body.light-theme .ds-divider { background: rgba(18,18,22,0.07); }
+body.light-theme .ds-user {
+  background: rgba(255,255,255,0.66);
+  border-color: rgba(18,18,22,0.07);
+}
+body.light-theme .ds-user:hover { background: rgba(255,255,255,0.92); }
+body.light-theme .ds-user-name { color: #18181B; }
+body.light-theme .ds-user-role { color: #5C6069; }
+
+/* ── Cards & surfaces ── */
+body.light-theme .qa-card,
+body.light-theme .service-item,
+body.light-theme .vehicle-card,
+body.light-theme .taller-card,
+body.light-theme .calendar-card,
+body.light-theme .track-card,
+body.light-theme .mechanic-card,
+body.light-theme .stat-card,
+body.light-theme .menu-item {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.74));
+  border-color: rgba(18,18,22,0.08);
+  box-shadow: 0 2px 10px rgba(18,18,22,0.05), 0 1px 3px rgba(18,18,22,0.04), inset 0 1px 0 rgba(255,255,255,0.80);
+}
+body.light-theme .mini-metric,
+body.light-theme .offered-card,
+body.light-theme .vehicle-detail-card,
+body.light-theme .timeline-item,
+body.light-theme .notification-card,
+body.light-theme .setting-row {
+  background: linear-gradient(180deg, rgba(255,255,255,0.93), rgba(255,255,255,0.76));
+  border-color: rgba(18,18,22,0.08);
+  box-shadow: 0 2px 10px rgba(18,18,22,0.05), 0 1px 3px rgba(18,18,22,0.04), inset 0 1px 0 rgba(255,255,255,0.80);
+}
+body.light-theme .service-detail-card {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(197,34,34,0.10), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.72));
+  border-color: rgba(18,18,22,0.08);
+}
+body.light-theme .taller-card.selected { background: rgba(197,34,34,0.05); border-color: var(--red); }
+body.light-theme .notification-card.unread { border-color: rgba(197,34,34,0.28); }
+
+/* ── Vehicle icon bg ── */
+body.light-theme .vehicle-icon { background: rgba(197,34,34,0.09); }
+body.light-theme .vehicle-chip,
+body.light-theme .icon-action,
+body.light-theme .pill-toggle {
+  background: rgba(255,255,255,0.82);
+  border-color: rgba(18,18,22,0.09);
+  color: var(--text);
+}
+body.light-theme .vehicle-chip.active {
+  background: rgba(197,34,34,0.09);
+  color: var(--red);
+  border-color: rgba(197,34,34,0.24);
+}
+
+/* ── Taller tags ── */
+body.light-theme .taller-tag { background: rgba(18,18,22,0.06); color: var(--muted); }
+body.light-theme .taller-logo { background: rgba(18,18,22,0.05); }
+
+/* ── Buttons ── */
+body.light-theme .btn-secondary {
+  background: rgba(255,255,255,0.86);
+  border-color: rgba(18,18,22,0.12);
+  color: var(--text);
+}
+body.light-theme .social-btn {
+  background: rgba(255,255,255,0.86);
+  border-color: rgba(18,18,22,0.10);
+  color: var(--text);
+}
+body.light-theme .back-btn,
+body.light-theme .notif-btn {
+  background: rgba(255,255,255,0.86);
+  border-color: rgba(18,18,22,0.09);
+  color: var(--text);
+}
+body.light-theme .notif-dot { border-color: #F6F3EF; }
+
+/* ── Chips ── */
+body.light-theme .chip {
+  background: rgba(197,34,34,0.07);
+  border-color: rgba(197,34,34,0.26);
+  color: var(--red);
+}
+body.light-theme .chip:hover { background: var(--red); color: white; }
+
+/* ── Time slots ── */
+body.light-theme .slot {
+  background: rgba(255,255,255,0.86);
+  border-color: rgba(18,18,22,0.09);
+  color: var(--text);
+}
+body.light-theme .slot.selected { background: var(--red); border-color: var(--red); color: white; }
+body.light-theme .slot.unavail { opacity: 0.38; }
+
+/* ── Calendar ── */
+body.light-theme .cal-nav {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(18,18,22,0.09);
+  color: var(--text);
+}
+body.light-theme .cal-day { color: var(--text); }
+body.light-theme .cal-day:hover { background: rgba(18,18,22,0.05); }
+body.light-theme .cal-day-label { color: var(--muted); }
+
+/* ── Health bar ── */
+body.light-theme .health-bar { background: rgba(18,18,22,0.08); }
+
+/* ── Tracking steps ── */
+body.light-theme .step-dot         { background: #F6F3EF; border-color: rgba(18,18,22,0.15); color: var(--muted); }
+body.light-theme .step-dot.done    { background: var(--red); border-color: var(--red); color: white; }
+body.light-theme .step-dot.active  { background: #FAF8F4; border-color: var(--red); color: var(--red); }
+body.light-theme .step-line        { background: rgba(18,18,22,0.10); }
+body.light-theme .step-line.done   { background: var(--red); }
+
+/* ── ETA card ── */
+body.light-theme .eta-card {
+  background: rgba(197,34,34,0.06);
+  border-color: rgba(197,34,34,0.16);
+}
+body.light-theme .eta-cost-value { color: var(--text); }
+
+/* ── Chat ── */
+body.light-theme .chat-header {
+  background: rgba(247,244,240,0.92);
+  border-bottom-color: rgba(18,18,22,0.09);
+}
+body.light-theme .msg.bot .msg-bubble {
+  background: rgba(255,255,255,0.90);
+  border-color: rgba(18,18,22,0.08);
+  color: var(--text);
+}
+body.light-theme .chat-input-bar { border-top-color: rgba(18,18,22,0.09); }
+body.light-theme .msg-time { color: var(--muted2); }
+
+/* ── Bottom nav ── */
+body.light-theme .bottom-nav {
+  background: var(--nav-bg);
+  border-top-color: rgba(18,18,22,0.08);
+  box-shadow: 0 -8px 28px rgba(18,18,22,0.06);
+}
+body.light-theme .nav-item.active { background: rgba(197,34,34,0.09); }
+body.light-theme .nav-label { color: var(--muted); }
+
+/* ── Toggle switch ── */
+body.light-theme .switch { background: rgba(18,18,22,0.14); }
+body.light-theme .switch.on { background: var(--red); }
+
+/* ── Badges ── */
+body.light-theme .badge-done    { background: rgba(34,197,94,0.12); color: #16A34A; }
+body.light-theme .badge-pending { background: rgba(245,158,11,0.13); color: #B45309; }
+
+/* ── Dividers & borders ── */
+body.light-theme .taller-meta { border-top-color: rgba(18,18,22,0.08); }
+body.light-theme .divider { color: var(--muted2); }
+body.light-theme .divider::before,
+body.light-theme .divider::after { background: rgba(18,18,22,0.09); }
+
+/* ── Form inputs — override PREMIUM PRODUCT PASS hard-coded gradient ── */
+body.light-theme .form-input {
+  background: rgba(255,255,255,0.92) !important;
+  border-color: rgba(18,18,22,0.10) !important;
+  color: #18181B !important;
+  box-shadow: none !important;
+}
+body.light-theme .form-input::placeholder { color: rgba(18,18,22,0.38) !important; }
+body.light-theme .form-input:focus {
+  border-color: rgba(197,34,34,0.70) !important;
+  box-shadow: 0 0 0 4px rgba(197,34,34,0.10) !important;
+}
+body.light-theme .chat-input {
+  background: rgba(255,255,255,0.92) !important;
+  border-color: rgba(18,18,22,0.09) !important;
+  color: #18181B !important;
+  box-shadow: none !important;
+}
+body.light-theme .chat-input::placeholder { color: rgba(18,18,22,0.36) !important; }
+
+/* ── Btn-secondary & social — same hard-coded gradient fix ── */
+body.light-theme .btn-secondary,
+body.light-theme .social-btn,
+body.light-theme .back-btn,
+body.light-theme .notif-btn {
+  background: rgba(255,255,255,0.88) !important;
+  border-color: rgba(18,18,22,0.10) !important;
+  box-shadow: 0 1px 3px rgba(18,18,22,0.06) !important;
+}
+body.light-theme .btn-secondary { color: #18181B !important; }
+body.light-theme .social-btn { color: #18181B !important; }
+
+/* ── Quick action cards, service items, menu items — gradient fix ── */
+body.light-theme .qa-card,
+body.light-theme .service-item,
+body.light-theme .vehicle-card,
+body.light-theme .taller-card,
+body.light-theme .calendar-card,
+body.light-theme .track-card,
+body.light-theme .mechanic-card,
+body.light-theme .stat-card,
+body.light-theme .menu-item,
+body.light-theme .slot {
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.76)) !important;
+  border-color: rgba(18,18,22,0.08) !important;
+}
+body.light-theme .slot.selected {
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  color: white !important;
+}
+body.light-theme .taller-card.selected {
+  background: rgba(197,34,34,0.06) !important;
+  border-color: var(--red) !important;
+}
+
+/* ── Splash ── */
+body.light-theme #view-splash { background: var(--screen-bg) !important; }
+body.light-theme .splash-brand { color: #18181B; }
+body.light-theme .splash-tagline { color: var(--muted); }
+
+/* ── theme-color meta update ── */
+
+/* ═══════════════════════════════════════════════════════════
+   BOTTOM NAV — RESPONSIVE SYSTEM (FINAL AUTHORITATIVE LAYER)
+   Visible only < 768px (desktop hides it with display:none).
+   Placed last to beat all prior rules including !important.
+═══════════════════════════════════════════════════════════ */
+
+/* ── Shared reset for the entire mobile/tablet range ── */
+@media (max-width: 767px) {
+  .bottom-nav {
+    /* Switch from grid (set globally at line ~1898) back to flex */
+    display: flex !important;
+    align-items: stretch !important;
+    overflow: hidden !important;
+    /* Glass background */
+    background: var(--nav-bg) !important;
+    backdrop-filter: blur(26px) saturate(1.6) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(1.6) !important;
+  }
+  .nav-item {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    transition: background 150ms ease, transform 120ms ease !important;
+  }
+  .nav-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 1.85 !important;
+  }
+  .nav-label {
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+  }
+  .nav-item.active {
+    background: rgba(197,34,34,0.10) !important;
+  }
+  .nav-item:active {
+    transform: scale(0.86) !important;
+  }
+}
+
+/* ── Mobile ≤ 430px — full-width bar, flush to bottom edge ── */
+@media (max-width: 430px) {
+  .bottom-nav {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-top: 1px solid var(--border) !important;
+    padding: 5px 4px 0 !important;
+    padding-bottom: max(10px, env(safe-area-inset-bottom)) !important;
+    gap: 0 !important;
+    box-shadow: 0 -1px 0 var(--border), 0 -10px 30px rgba(0,0,0,0.18) !important;
+  }
+  .nav-item {
+    padding: 7px 2px 5px !important;
+    gap: 2px !important;
+    border-radius: 10px !important;
+    min-height: 0 !important;
+  }
+  .nav-icon svg { width: 18px !important; height: 18px !important; }
+  .nav-label { font-size: 9px !important; }
+}
+
+/* ── Phablet 431–600px — compact floating pill, centered ── */
+@media (min-width: 431px) and (max-width: 600px) {
+  .bottom-nav {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: clamp(10px, 2vh, 18px) !important;
+    width: min(440px, calc(100% - 28px)) !important;
+    transform: translateX(-50%) !important;
+    border-radius: 20px !important;
+    border: 1px solid var(--border) !important;
+    padding: 5px 8px !important;
+    padding-bottom: max(5px, env(safe-area-inset-bottom)) !important;
+    gap: 2px !important;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.20), 0 2px 8px rgba(0,0,0,0.12),
+                inset 0 1px 0 rgba(255,255,255,0.08) !important;
+  }
+  .nav-item {
+    padding: 8px 3px 7px !important;
+    gap: 3px !important;
+    min-height: 0 !important;
+  }
+  .nav-icon svg { width: 19px !important; height: 19px !important; }
+  .nav-label { font-size: 9.5px !important; }
+}
+
+/* ── Tablet 601–767px — wider floating pill, centered ── */
+@media (min-width: 601px) and (max-width: 767px) {
+  .bottom-nav {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: clamp(12px, 2.5vh, 22px) !important;
+    width: min(560px, calc(100% - 40px)) !important;
+    transform: translateX(-50%) !important;
+    border-radius: 24px !important;
+    border: 1px solid var(--border) !important;
+    padding: 6px 12px !important;
+    padding-bottom: max(6px, env(safe-area-inset-bottom)) !important;
+    gap: 4px !important;
+    box-shadow: 0 12px 42px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10),
+                inset 0 1px 0 rgba(255,255,255,0.10) !important;
+  }
+  .nav-item {
+    padding: 9px 6px 8px !important;
+    gap: 3px !important;
+    border-radius: 15px !important;
+    min-height: 0 !important;
+  }
+  .nav-icon svg { width: 20px !important; height: 20px !important; }
+  .nav-label { font-size: 10px !important; }
+}
+
+/* ── Light mode: softer shadows for the floating pill ── */
+@media (min-width: 431px) and (max-width: 600px) {
+  body.light-theme .bottom-nav {
+    box-shadow: 0 6px 28px rgba(18,18,22,0.12), 0 2px 6px rgba(18,18,22,0.07),
+                inset 0 1px 0 rgba(255,255,255,0.86) !important;
+    border-color: rgba(18,18,22,0.09) !important;
+  }
+}
+@media (min-width: 601px) and (max-width: 767px) {
+  body.light-theme .bottom-nav {
+    box-shadow: 0 8px 32px rgba(18,18,22,0.12), 0 2px 8px rgba(18,18,22,0.07),
+                inset 0 1px 0 rgba(255,255,255,0.90) !important;
+    border-color: rgba(18,18,22,0.09) !important;
+  }
+}
+@media (max-width: 430px) {
+  body.light-theme .bottom-nav {
+    box-shadow: 0 -1px 0 rgba(18,18,22,0.09), 0 -6px 20px rgba(18,18,22,0.06) !important;
+    border-top-color: rgba(18,18,22,0.09) !important;
+  }
+}
+/* Light mode active state */
+@media (max-width: 767px) {
+  body.light-theme .nav-item.active {
+    background: rgba(197,34,34,0.09) !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -3967,8 +4459,22 @@ function toggleTheme() {
   const isLight = document.body.classList.contains('light-theme');
   document.body.classList.toggle('light-theme', !isLight);
   document.body.classList.toggle('dark-theme', isLight);
+  try { localStorage.setItem('as-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = isLight ? '#080809' : '#F6F3EF';
   renderLucideIcons();
 }
+
+// Init theme from localStorage or system preference
+(function() {
+  var saved = null;
+  try { saved = localStorage.getItem('as-theme'); } catch(e) {}
+  var systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  var useLight = saved !== null ? saved === 'light' : systemLight;
+  document.body.classList.add(useLight ? 'light-theme' : 'dark-theme');
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = useLight ? '#F6F3EF' : '#080809';
+})();
 
 function renderLucideIcons() {
   if (window.lucide) lucide.createIcons();
