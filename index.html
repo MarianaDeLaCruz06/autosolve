@@ -8,7 +8,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#080809">
 <title>AutoSolve</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest" async></script>
 <style>
 :root {
@@ -3456,6 +3456,142 @@ body.light-theme .splash-tagline { color: var(--muted); }
     z-index: 200 !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   NUMERIC TYPOGRAPHY — VISUAL POLISH
+   Syne 800 crushes numerals. DM Sans 700 renders them cleanly
+   with proper proportions. tabular-nums prevents width jumps.
+═══════════════════════════════════════════════════════════ */
+.stat-value {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 26px !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+.stat-label {
+  font-size: 10px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  margin-top: 5px !important;
+  font-weight: 500 !important;
+  color: var(--muted) !important;
+}
+.eta-value {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 28px !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+.eta-cost-value {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 21px !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+.mini-metric strong {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.1 !important;
+  font-variant-numeric: tabular-nums !important;
+  color: var(--text) !important;
+}
+.taller-rating {
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: -0.01em !important;
+  font-weight: 600 !important;
+}
+.service-price {
+  font-family: 'DM Sans', sans-serif !important;
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: -0.015em !important;
+  font-weight: 600 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SERVICE CARDS — LIGHT MODE PREMIUM ELEVATION
+   Background is warm cream (#FAF8F4→#F2EDE8). Cards must
+   feel physically elevated, not just slightly lighter.
+═══════════════════════════════════════════════════════════ */
+
+/* Recent service items — home view */
+body.light-theme .service-item {
+  background: linear-gradient(160deg, #FFFFFF 0%, #FAF5EF 100%) !important;
+  border-color: rgba(18,18,22,0.09) !important;
+  box-shadow:
+    0 6px 22px rgba(18,18,22,0.09),
+    0 2px 6px rgba(18,18,22,0.05),
+    inset 0 1px 0 rgba(255,255,255,1.0) !important;
+}
+body.light-theme .service-name {
+  color: #18181B !important;
+  font-weight: 600 !important;
+}
+body.light-theme .service-date { color: #6B6F78 !important; }
+body.light-theme .service-price {
+  color: var(--red) !important;
+  font-weight: 700 !important;
+}
+body.light-theme .badge-done {
+  background: rgba(22,163,74,0.10) !important;
+  color: #16A34A !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(22,163,74,0.16) !important;
+}
+body.light-theme .badge-pending {
+  background: rgba(180,83,9,0.09) !important;
+  color: #B45309 !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(180,83,9,0.14) !important;
+}
+
+/* Service offering cards (grid with icons) */
+body.light-theme .offered-card {
+  background: linear-gradient(150deg, #FFFFFF 0%, #F9F3ED 100%) !important;
+  border-color: rgba(18,18,22,0.08) !important;
+  box-shadow:
+    0 6px 22px rgba(18,18,22,0.08),
+    0 2px 5px rgba(18,18,22,0.04),
+    inset 0 1px 0 rgba(255,255,255,1.0) !important;
+  color: #18181B !important;
+}
+
+/* General cards — consistent warm elevation */
+body.light-theme .qa-card,
+body.light-theme .vehicle-card,
+body.light-theme .taller-card,
+body.light-theme .calendar-card,
+body.light-theme .track-card,
+body.light-theme .mechanic-card,
+body.light-theme .stat-card,
+body.light-theme .menu-item {
+  background: linear-gradient(160deg, #FFFFFF 0%, #FAF5EF 100%) !important;
+  border-color: rgba(18,18,22,0.09) !important;
+  box-shadow:
+    0 5px 20px rgba(18,18,22,0.08),
+    0 1px 4px rgba(18,18,22,0.04),
+    inset 0 1px 0 rgba(255,255,255,1.0) !important;
+}
+body.light-theme .mini-metric {
+  background: linear-gradient(160deg, #FFFFFF 0%, #FAF5EF 100%) !important;
+  border-color: rgba(18,18,22,0.09) !important;
+  box-shadow:
+    0 4px 18px rgba(18,18,22,0.07),
+    0 1px 3px rgba(18,18,22,0.04),
+    inset 0 1px 0 rgba(255,255,255,1.0) !important;
+}
+/* Numbers legible on warm backgrounds */
+body.light-theme .stat-value  { color: #18181B !important; }
+body.light-theme .mini-metric strong { color: #18181B !important; }
+body.light-theme .eta-value   { color: var(--red) !important; }
+body.light-theme .eta-cost-value { color: #18181B !important; }
 </style>
 </head>
 <body>
