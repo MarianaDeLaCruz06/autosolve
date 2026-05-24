@@ -3387,6 +3387,75 @@ body.light-theme .splash-tagline { color: var(--muted); }
     background: rgba(197,34,34,0.09) !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   iOS SAFARI BOTTOM NAV — DEFINITIVE FIX
+   Root cause: position:absolute inside overflow:scroll causes
+   erratic rendering on Safari (nav scrolls, shifts, overflows).
+   Fix: position:fixed anchors to the real viewport regardless
+   of scroll containers. Floating centered pill on all phones.
+═══════════════════════════════════════════════════════════ */
+
+/* ── iPhone ≤430px: centered floating pill ── */
+@media (max-width: 430px) {
+  .bottom-nav {
+    position: fixed !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: min(92%, 680px) !important;
+    /* symmetric padding — safe area already handled by bottom offset */
+    padding: 5px 6px 5px !important;
+    border-radius: 22px !important;
+    border: 1px solid var(--border) !important;
+    border-top: 1px solid var(--border) !important;
+    box-shadow:
+      0 8px 36px rgba(0,0,0,0.22),
+      0 2px 8px rgba(0,0,0,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.07) !important;
+    gap: 2px !important;
+    z-index: 200 !important;
+  }
+  /* Nav items balanced inside the pill */
+  .nav-item {
+    padding: 7px 4px 6px !important;
+    gap: 2px !important;
+    border-radius: 13px !important;
+    min-height: 0 !important;
+  }
+  .nav-label { font-size: 9px !important; }
+  .nav-icon svg { width: 18px !important; height: 18px !important; }
+  /* Scrollable views: extra bottom clearance for floating nav */
+  #view-home .scrollable-content,
+  #view-agenda .scrollable-content,
+  #view-track .scrollable-content,
+  #view-vehiculos .page-grid,
+  #view-historial .history-timeline,
+  #view-notificaciones .notification-list,
+  #view-configuracion .settings-list {
+    padding-bottom: max(104px, calc(92px + env(safe-area-inset-bottom))) !important;
+  }
+  #view-chat .chat-input-bar {
+    margin-bottom: max(88px, calc(76px + env(safe-area-inset-bottom))) !important;
+  }
+  /* Light mode softer shadow */
+  body.light-theme .bottom-nav {
+    box-shadow:
+      0 6px 28px rgba(18,18,22,0.12),
+      0 2px 6px rgba(18,18,22,0.07),
+      inset 0 1px 0 rgba(255,255,255,0.86) !important;
+    border-color: rgba(18,18,22,0.09) !important;
+  }
+}
+
+/* ── Phablet/tablet 431–767px: also fix to viewport ── */
+@media (min-width: 431px) and (max-width: 767px) {
+  .bottom-nav {
+    position: fixed !important;
+    z-index: 200 !important;
+  }
+}
 </style>
 </head>
 <body>
